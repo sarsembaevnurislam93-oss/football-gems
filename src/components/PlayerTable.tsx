@@ -91,7 +91,16 @@ const PlayerTable = ({ players }: PlayerTableProps) => {
                           {player.name}
                           <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                         </p>
-                        <p className="text-xs text-muted-foreground">{player.league}</p>
+                        <p className="text-xs text-muted-foreground flex items-center gap-1">
+                          <span>
+                            {player.league === 'Premier League' ? '🏴󠁧󠁢󠁥󠁮󠁧󠁿' :
+                             player.league === 'La Liga' ? '🇪🇸' :
+                             player.league === 'Bundesliga' ? '🇩🇪' :
+                             player.league === 'Serie A' ? '🇮🇹' :
+                             player.league === 'Ligue 1' ? '🇫🇷' : '🌍'}
+                          </span>
+                          {player.league}
+                        </p>
                       </div>
                     </div>
                   </TableCell>
